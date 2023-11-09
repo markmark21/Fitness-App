@@ -4,6 +4,7 @@ import {SelectedPage} from "@/shared/types.ts";
 import Home from "@/scenes/home/Home.tsx";
 import Benefits from "@/scenes/benefits/Benefits.tsx";
 import OurClasses from "@/scenes/ourClasses/OurClasses.tsx";
+import ContactUs from "@/scenes/contactUs/ContactUs.tsx";
 
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
             <Home setSelectedPage={setSelectedPage}/>
             <Benefits setSelectedPage={setSelectedPage}/>
             <OurClasses setSelectedPage={setSelectedPage}/>
+            <ContactUs setSelectedPage={setSelectedPage}/>
         </div>
     )
 }
