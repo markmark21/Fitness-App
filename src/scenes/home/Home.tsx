@@ -7,7 +7,7 @@ import SponsorForbes from "@/assets/SponsorForbes.png"
 import SponsorRedBull from "@/assets/SponsorRedBull.png"
 import ActionButton from "@/shared/ActionButton.tsx";
 import AnchorLink from "react-anchor-link-smooth-scroll";
-import { motion } from "framer-motion";
+import {motion} from "framer-motion";
 
 
 type Props = {
@@ -21,7 +21,10 @@ const Home = ({setSelectedPage}: Props) => {
         className='gap-16 bg-gray-20 pb-10 py-10 md:h-full md:pb-0'
     >
         {/* IMAGE AND MAIN HEADER */}
-        <div className='md:flex mx-auto w-5/6 items-center justify-center md:h-5/6'>
+        <motion.div
+            className='md:flex mx-auto w-5/6 items-center justify-center md:h-5/6'
+            onViewportEnter={() => setSelectedPage(SelectedPage.Home)}
+        >
             {/* MAIN HEADER */}
             <div className='z-10 mt-32 md:basis-3/5'>
                 {/* HEADINGS */}
@@ -32,7 +35,7 @@ const Home = ({setSelectedPage}: Props) => {
                     viewport={{once: true, amount: 0.5}}
                     transition={{duration: 0.5}}
                     variants={{
-                        hidden: {opacity: 0, x: -50},
+                        hidden: {opacity: 0, x: -300},
                         visible: {opacity: 1, x: 0}
                     }}
                 >
@@ -50,7 +53,17 @@ const Home = ({setSelectedPage}: Props) => {
                     </p>
                 </motion.div>
                 {/* ACTIONS */}
-                <div className='mt-8 flex items-center gap-8'>
+                <motion.div
+                    className='mt-8 flex items-center gap-8'
+                    initial='hidden'
+                    whileInView='visible'
+                    viewport={{once: true, amount: 0.5}}
+                    transition={{delay: 0.2, duration: 0.5}}
+                    variants={{
+                        hidden: {opacity: 0, x: -300},
+                        visible: {opacity: 1, x: 0}
+                    }}
+                >
                     <ActionButton setSelectedPage={setSelectedPage}>
                         Join Now
                     </ActionButton>
@@ -62,7 +75,7 @@ const Home = ({setSelectedPage}: Props) => {
                         <p>Learn More</p>
 
                     </AnchorLink>
-                </div>
+                </motion.div>
             </div>
             {/* IMAGE */}
             <div className='flex basis-3/5 justify-center md:z-10
@@ -70,7 +83,7 @@ const Home = ({setSelectedPage}: Props) => {
             >
                 <img src={HomePageGraphic} alt="home-pageGraphic"/>
             </div>
-        </div>
+        </motion.div>
         {/* SPONSORS */}
         {isAboveMediumScreens && (
             <div className='h-[150px] w-full bg-primary-100 py-10'>
