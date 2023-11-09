@@ -5,6 +5,7 @@ import Home from "@/scenes/home/Home.tsx";
 import Benefits from "@/scenes/benefits/Benefits.tsx";
 import OurClasses from "@/scenes/ourClasses/OurClasses.tsx";
 import ContactUs from "@/scenes/contactUs/ContactUs.tsx";
+import Footer from "@/scenes/footer/Footer.tsx";
 
 
 function App() {
@@ -36,6 +37,7 @@ function App() {
             <Benefits setSelectedPage={setSelectedPage}/>
             <OurClasses setSelectedPage={setSelectedPage}/>
             <ContactUs setSelectedPage={setSelectedPage}/>
+            <Footer/>
         </div>
     )
 }
