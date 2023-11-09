@@ -8,7 +8,7 @@ import ActionButton from "@/shared/ActionButton.tsx";
 
 type Props = {
     selectedPage: SelectedPage,
-    setSelectedPage: (value: SelectedPage) => {}
+    setSelectedPage: (value: SelectedPage) => void
     isTopOfPage: boolean;
 }
 const Navbar = ({isTopOfPage, selectedPage, setSelectedPage}: Props) => {
