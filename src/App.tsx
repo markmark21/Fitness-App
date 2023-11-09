@@ -2,6 +2,7 @@ import Navbar from "@/scenes/navbar/Navbar.tsx";
 import {useEffect, useState} from "react";
 import {SelectedPage} from "@/shared/types.ts";
 import Home from "@/scenes/home/Home.tsx";
+import Benefits from "@/scenes/benefits/Benefits.tsx";
 
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
                 setSelectedPage={setSelectedPage}
             />
             <Home setSelectedPage={setSelectedPage}/>
+            <Benefits setSelectedPage={setSelectedPage}/>
         </div>
     )
 }
